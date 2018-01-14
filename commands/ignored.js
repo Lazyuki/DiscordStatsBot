@@ -12,7 +12,7 @@ module.exports.help = 'Shows a list of ignored channels.';
 
 module.exports.command = (message, content, bot, server) => {
   let arr = server.ignoredChannels;
-  let s = '';
+  let s = 'Ignored channels:\n';
   for (let index in arr) {
     if (!arr[index]) continue; // undefined
     s += `<#${arr[index]}>\n`;

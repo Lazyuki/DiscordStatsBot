@@ -53,20 +53,6 @@ module.exports = class Server {
     });
   }
 
-  async addNewUser(memberID) { 
-    this.processors['JOIN'].forEach((p) => {
-      p.process(memberID, this);
-    });
-  }
-  /*
-  async userUpdate(oldUser, newUser) { 
-    this.processors['USER_UPDATE'].forEach((p) => {
-      if (p.isAllowed(newUser.id, this)) {
-        p.process(newUser, this);
-      }
-    });
-  }
-  */
   save(backup = false) {
     // Store the actual date?
     if (backup) {

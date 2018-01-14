@@ -3,9 +3,8 @@ module.exports.alias = [
   'watched',
   'watchlist'
 ];
-module.exports.isAllowed = (message, server) => {
-  if (server.guild.id != '189571157446492161') return false;
-  return server.hiddenChannels.includes(message.channel.id) && message.member.hasPermission('ADMINISTRATOR');
+module.exports.isAllowed = (message) => {
+  return message.member.hasPermission('ADMINISTRATOR');
 };
 
 module.exports.help = 'Shows users on the watchlist.';

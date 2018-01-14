@@ -36,8 +36,13 @@ module.exports.command = async (message, content) => {
         delCount++;
       }
     }
-    if (delMsgs.length > 0) {
-      message.channel.bulkDelete(delMsgs);
+    if (delMsgs.length > 1) {
+      try {
+        message.channel.bulkDelete(delMsgs);
+      } catch (e) {
+        console.log(e.message);
+        return;
+      }
     }
   }
   message.channel.send(`Checked ${count} messages and deleted ${delCount} messages!`);

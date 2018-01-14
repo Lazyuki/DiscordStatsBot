@@ -2,12 +2,11 @@ module.exports.name = 'unwatch';
 module.exports.alias = [
   'unwatch'
 ];
-module.exports.isAllowed = (message, server) => {
-  if (server.guild.id != '189571157446492161') return false;  
-  return server.hiddenChannels.includes(message.channel.id) && message.member.hasPermission('ADMINISTRATOR');
+module.exports.isAllowed = (message) => {
+  return message.member.hasPermission('ADMINISTRATOR');
 };
 
-module.exports.help = 'Take someone off the watchlist.';
+module.exports.help = '`,unwatch <@mention | userID>` Take someone off the watchlist.';
 
 module.exports.command = async (message, content, bot, server) => {
   if (content == '') {

@@ -8,12 +8,11 @@ module.exports.initialize = (json, server) => {
   server.watchedUsers = json['watchedUsers']; // surveillance
 };
 
-module.exports.isAllowed = (message, server) => {
-  if (server.guild.id != '189571157446492161') return false;
-  return server.hiddenChannels.includes(message.channel.id) && message.member.hasPermission('ADMINISTRATOR');
+module.exports.isAllowed = (message) => {
+  return message.member.hasPermission('ADMINISTRATOR');
 };
 
-module.exports.help = 'Watch a user for deleted messages `,watch <@mention or ID>`';
+module.exports.help = 'Watch a user for deleted messages` ,watch <@mention or ID>`';
 
 module.exports.command = async (message, content, bot, server) => {
   if (content == '') {

@@ -36,6 +36,7 @@ bot.on('ready', () => {
   },  timeLeft * 1000); // Time left until the next day
   console.log('Logged in as ' + bot.user.username);
   console.log(`${time.toLocaleDateString()} ${time.toLocaleTimeString()}`);
+  console.log(`${bot.guilds.size} servers`);
   console.log('--------------------------');
   bot.servers = {};
   for (let guild of bot.guilds.values()) {
